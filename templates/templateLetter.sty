@@ -1,10 +1,10 @@
-\ProvidesPackage{Vorlage_Anschreiben}
+\ProvidesPackage{templateLetter}
 
 \LetterOptionNeedsPapersize{DIN}{a4}
 
 % ============ Packages ============
 \RequirePackage{graphicx}
-\RequirePackage{GemeinsameDaten}
+\RequirePackage{sharedData}
 %\RequirePackage[utf8]{inputenc}
 
 \RequirePackage{hyphsubst} % ngerman-x-latest ist buggy (miktex) 
@@ -52,13 +52,9 @@
 \setkomavar{fromaddress}{\addresse}
 \newkomavar[Mobil]{mobilphone}
 \setkomavar{mobilphone}[]{\mobilNr}
-\setkomavar{fromphone}[]{\festnetzNr}
-
-
-\setkomavar{fromfax}[]{\faxNr}
 \setkomavar{fromemail}[]{\myEmail}
 \setkomavar{place}[BezeichnungPlace]{\unterschriftsOrt}
-\setkomavar{fromname}{\vorname \ \nachname} % Opt. zwischen Args {}[Bez]
+\setkomavar{fromname}{\myName \ \mySurname} % Opt. zwischen Args {}[Bez]
 
 \setkomafont{subject}{\normalcolor\fontseries{sb}\selectfont}
 
@@ -69,19 +65,19 @@
 \setkomavar{enclseparator}[Anlagen]{} %Umbenennung, kein :
 
 % ------------ Kopf ------------
-\@setplength{firstheadvpos}{19mm} %Anfang header
+\setplength{firstheadvpos}{19mm} %Anfang header
 \setkomavar{firsthead}{%
 	\anschriftKopfZeile%
 }	
 % ------------ Fuss ------------
 \setkomavar{firstfoot}{\fussLinie{}{0mm}}
-\@setplength{firstfootvpos}{\paperheight-\fussAbstand}% 297-22.5 = 274.5 | org %{274.9mm}
+\setplength{firstfootvpos}{\paperheight-\fussAbstand}% 297-22.5 = 274.5 | org %{274.9mm}
 
 
 
 
 % ============ Abstaende KOMA ============
-%\@setplength{toaddrvpos}{32mm}	%Absenderzeile im Briefsichtfenster richten fuer DINmtext
+%\setplength{toaddrvpos}{32mm}	%Absenderzeile im Briefsichtfenster richten fuer DINmtext
 
 % ============ Notizen ============
 % Variablen  scrlttr2.				 		| Kap. 4.1 	S.145
@@ -91,7 +87,7 @@
 % \setkomavar{title}[]{Bewerbung }	| 				S.190
 % - Unterschrift / alt -
 %\renewcommand{\unterschrift}{\includegraphics[scale=0.15]{\unterschriftBild}}
-%\@setplength{sigbeforevskip}{-15pt}	% {0\baselineskip} 	% Abstand Grussfloskel Unterschrift
+%\setplength{sigbeforevskip}{-15pt}	% {0\baselineskip} 	% Abstand Grussfloskel Unterschrift
 %\setkomavar{signature}[]{ % siehe auch format.lco
 %	\unterschrift%\\					% use \raisebox?
 %	%\vspace{-0.4cm}\scriptsize
@@ -106,8 +102,8 @@
 % ============ Fin ============
 \AtEndPreamble{
 	\recalctypearea	% Satzspiegel und Rändern neu berechnen
-	%\the\useplength{refvpos} % >> 229.04468pt			\@addtoplength{refvpos}{0}  	\@setplength{refvpos}{229pt}
-	%\@setplength{subjectaftervskip}{\baselineskip} %subjectaftervskip >>  29pt
+	%\the\useplength{refvpos} % >> 229.04468pt			\@addtoplength{refvpos}{0}  	\setplength{refvpos}{229pt}
+	%\setplength{subjectaftervskip}{\baselineskip} %subjectaftervskip >>  29pt
 	%\setlength{\footskip}{-8pt} % -30pt Anlagen anpassen
 	%\setlength{\footskip}{0pt}
 }

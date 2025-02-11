@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
-\ProvidesPackage{Vorlage_Lebenslauf}
+\ProvidesPackage{templateCv}
 
 \newtoggle{breiterLebenslauf}
 \DeclareOption{breit}{\toggletrue{breiterLebenslauf}}
@@ -8,10 +8,9 @@
 \ProcessOptions
 
 
-% ============ Pakete ============
+% ============ Pakets ============
 \PassOptionsToPackage{pdfpagelabels=false}{hyperref} 
-\RequirePackage{GemeinsameDaten}
-%\RequirePackage[utf8]{inputenc}
+\RequirePackage{sharedData}
 \RequirePackage[english,ngerman]{babel}	%deutsch. LAST language in the option list will be active
 \selectlanguage{ngerman}
 \RequirePackage{calc,layout,lastpage,lipsum,verbatim}
@@ -25,7 +24,7 @@
 
 
 \errorcontextlines 100000
-\newtoggle{keinFoto}
+\newtoggle{noPhoto}
 \newtoggle{lebenslaufTitelZentriert}
 
 
@@ -36,8 +35,8 @@
 
 \@ifclassloaded{moderncv}{
 	\moderncvstyle{classic}
-	\firstname{\vorname}
-	\familyname{\nachname}
+	\firstname{\myName}
+	\familyname{\mySurname}
 	\moderncvcolor{blue} % 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 }% ELSE >
 {
@@ -125,7 +124,7 @@
 \newcommand \picLine {\makebox[\the\textwidth+\iftoggle{breiterLebenslauf}{0mm}{5mm}][r]{\pic}}%
 
 \newcommand* \titel [1] {%
-	\iftoggle{keinFoto}{}{%
+	\iftoggle{noPhoto}{}{%
 	\newlength{\picLH}%
 	\settoheight{\picLH}{\picLine}%
 	\vspace*{0mm}%

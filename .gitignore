@@ -30,12 +30,13 @@
 *.vrb
 *.xdy
 *.tdo
+*.fls
 Priv-**
 Spielwiese/
 build/
-Vorlage/*.pdf
-Vorlage/anschreibenGen.tex
-Vorlage/cvGen.tex
+template/*.pdf
+template/letterGen.tex
+template/cvGen.tex
 tmp/
 Vorlage/meta.tex
 

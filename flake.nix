@@ -48,6 +48,8 @@
               varwidth
               xcolor
               xkeyval
+              latexmk # for the LaTeX Workshop VS-Code pulugin
+              latexindent  # for formatting
               ;
           });
       in {

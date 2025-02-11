@@ -7,7 +7,7 @@
 % \renewcommand \schickesDatum[2]{	{\parbox[t]{\datumsZellenBreite}{\centering{#2\baselineskip=\datumsZifferMonatsAbstand\newline\par\vspace{\datumsZifferMonatsAbstand}\tiny{\strut\vphantom{x}}}}}}
 
 \laengsteStadt{Hamburg}
-%\toggletrue{keinFoto} % <- ohne Foto
+%\toggletrue{noPhoto} % <- ohne Foto
 %\toggletrue{lebenslaufTitelZentriert}
 %\chead{\anschriftKopfZeile} % experimentell
 %\renewcommand \eintragL [5]{\eintragLZwei{#1}{#2}{#3}{#4}{#5}} %2 statt 3 spalten Eintraege
@@ -16,29 +16,29 @@
 \titel{\emph{Lebenslauf}}
 
 \section{Persönliche Daten}
-\eintragK{Name}										{\nachname}
-\eintragK{Vorname}								{\vorname}
-\eintragK{Geboren}						{5. September 1900 im Kükennest}
-\eintragK{Nationalität}						{deutsch}
-\eintragK{Anschrift}							{\strasse}
-\eintragK{}												{\PLZ \ \wohnort}
-\eintragK{Telefon}								{\mobilNr}
-\eintragK{Email}									{\myEmail}
+\eintragK{Name}			{\mySurname}
+\eintragK{Vorname}		{\myName}
+\eintragK{Geboren}		{5. September 1900 im Kükennest}
+\eintragK{Nationalität}	{deutsch}
+\eintragK{Anschrift}	{\street}
+\eintragK{}				{\zipCode \ \city}
+\eintragK{Telefon}		{\phoneNumber}
+\eintragK{Email}		{\myEmail}
 
 %\onehalfspacing\setlength\datumsVKorrektur{-1.2\baselineskip}
 
 \section{Hochschulstudium}
 \eintragL{\zeit[03.2002-03.2008]}{Fachhochschule }{Dipl.}{Stadt}{%
 	\begin{itemize}%
-	\item Studiengang: 
-	\item Abschluss: ...
-	\item Abschlussnote: ...
-	\item Diplomarbeit:
-		\begin{itemize}
-		\item \glqq ...\grqq 
-		\item Themenbereich: ...
-		\item verwendete Technologien: ...
-	\end{itemize}
+		\item Studiengang:
+		\item Abschluss: ...
+		\item Abschlussnote: ...
+		\item Diplomarbeit:
+		      \begin{itemize}
+			      \item \glqq ...\grqq
+			      \item Themenbereich: ...
+			      \item verwendete Technologien: ...
+		      \end{itemize}
 	\end{itemize}
 }
 
@@ -48,15 +48,15 @@
 
 \eintragL{\zeit[10.2008-09.2010]}{Fachhochschule}{M.Sc.}{Stadt}{%
 	\begin{itemize}%
-	\item Studiengang: ...
-	\item Vertiefung: ...
-	\item Abschluss: Master of Science
-	\item Abschlussnote: ...
-	\item Masterthesis:
-	\begin{itemize}
-		\item \glqq ... \grqq
-		\item Schwerpunkte:...
-	\end{itemize}
+		\item Studiengang: ...
+		\item Vertiefung: ...
+		\item Abschluss: Master of Science
+		\item Abschlussnote: ...
+		\item Masterthesis:
+		      \begin{itemize}
+			      \item \glqq ... \grqq
+			      \item Schwerpunkte:...
+		      \end{itemize}
 	\end{itemize}
 }
 
@@ -69,27 +69,27 @@
 %\begin{comment}
 \eintragL{\zeit[08.2004-02.2005]}{Technologies}{}{Stadt}{%
 	\begin{itemize}
-	\item Erstes Praxissemester
-	\item ...
-	\item Benutzte Techniken: ...
+		\item Erstes Praxissemester
+		\item ...
+		\item Benutzte Techniken: ...
 	\end{itemize}
 }
 
 \eintragL{\seit[04.2006]{{\small seit} \hphantom{--}}}{Fundação}{}{Stadt}{%
 	\begin{itemize}
-	\item Zweites Praxissemester
-	\item ...
-	\item ...
+		\item Zweites Praxissemester
+		\item ...
+		\item ...
 	\end{itemize}
 }
 
 
 \eintragL{\von[04.2006]bis{\small heute}}{Firma}{Architect}{Stadt}{%
-	\begin{itemize}
+\begin{itemize}
 	\item Projektarbeit und Consulting
 	\item ...
 	\item ...
-	\end{itemize}
+\end{itemize}
 }
 
 
@@ -107,20 +107,20 @@
 
 \section{IT--Kenntnisse}
 \eintragK{}{\begin{tabu} to \maincolumnwidth {p{\tabBreite}@{\hspace{\tabSpace}}X{l}}
-	{\mdseries Betriebssysteme}: & Windows, Linux\\
-	{\mdseries Office}: & PowerPoint, \LaTeX \\
-	{\mdseries ...}: & ...\\ 
-	{\mdseries ...}: & ...\\
-	{\mdseries ...}: & ...
-\end{tabu}
+		{\mdseries Betriebssysteme}: & Windows, Linux     \\
+		{\mdseries Office}:          & PowerPoint, \LaTeX \\
+		{\mdseries ...}:             & ...                \\
+		{\mdseries ...}:             & ...                \\
+		{\mdseries ...}:             & ...
+	\end{tabu}
 }
 
 \section{Fremdsprachen}
 \eintragK{}{\begin{tabu} to \maincolumnwidth {p{\tabBreite}@{\hspace{\tabSpace}}X{l}}
-	{\mdseries Englisch}: & verhandlungssicher\\
-	{\mdseries ...}: & ...\\
-	{\mdseries ...}: & ...
-\end{tabu}
+		{\mdseries Englisch}: & verhandlungssicher \\
+		{\mdseries ...}:      & ...                \\
+		{\mdseries ...}:      & ...
+	\end{tabu}
 }
 
 

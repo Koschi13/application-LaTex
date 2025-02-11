@@ -1,15 +1,14 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% WARNING %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% Requires to be built twice in order to get the page number right! %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \PassOptionsToPackage{dvipsnames}{xcolor}
+
 \documentclass[12pt,a4paper,sans]{moderncv} % ***test letter***  % font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
-\usepackage[breit]{Vorlage_Lebenslauf}
+
+\usepackage[breit]{templateCv}
 \usepackage[utf8x]{inputenc}
 %\usepackage{showframe}
-%\PrerenderUnicode{ßÄäÜüÖö}
-
-\input{meta.tex}
-\input{\bewerberInfos}
-
-
-
 % untere Linie Seitenabschluss
 %\usepackage{picture,eso-pic}\AddToShipoutPicture{\AtPageUpperLeft{\multiput(0,-280mm)(.01\paperwidth,0){100}{\line(1,0){.005\paperwidth}}}}
 %anfang auflistung alt2
@@ -20,14 +19,21 @@
 %\usepackage{picture,eso-pic}\AddToShipoutPicture{\AtPageUpperLeft{\multiput(160mm,0)(0,-.01\paperheight){100}{\line(0,-1){.005\paperheight}}}}
 % rechter textrand + 1cm
 %\usepackage{picture,eso-pic}\AddToShipoutPicture{\AtPageUpperLeft{\multiput(163mm,0)(0,-.01\paperheight){100}{\line(0,-1){.005\paperheight}}}}
+
+\input{meta.tex}
+\input{\applicantInfo}
 %\input{../DIN5008/din5008frame.tex}
 
+\moderncvcolor{blue}
+
 \begin{document}
-%\toggletrue{keinFoto}
-\input{\cvRef}
+
+%\toggletrue{noPhoto}
+\input{\cvContent}
 %\oddpagelayoutfalse
 %\twocolumnlayoutfalse
 %\drawdimensionsfalse
 %\printheadingsfalse
+
 \end{document}
  

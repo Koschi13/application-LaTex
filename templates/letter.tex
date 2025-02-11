@@ -1,20 +1,24 @@
-\documentclass[DINmtext,draft=false,ngerman]{scrlttr2}% 		DIN oder DINmtext
-\usepackage[utf8x]{inputenc}
-\usepackage{layouts,etoolbox}
+\documentclass[DINmtext,draft=false,ngerman]{scrlttr2}  % DIN or DINmtext
 
-\usepackage{Vorlage_Anschreiben}
-% Hilfslinien
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{layouts,etoolbox}
+\usepackage{templateLetter}
+
+% Uncomment to render help-lines for adjustment
 %\usepackage{picture,eso-pic}\AddToShipoutPicture*{\AtPageUpperLeft{\multiput(0,-19mm)(.01\paperwidth,0){100}{\line(1,0){.005\paperwidth}}}}
 %\usepackage{picture,eso-pic}\AddToShipoutPicture*{\AtPageUpperLeft{\multiput(0,-28mm)(.01\paperwidth,0){100}{\line(1,0){.005\paperwidth}}}}
 %\usepackage{picture,eso-pic}\AddToShipoutPicture*{\AtPageUpperLeft{\multiput(0,-42mm)(.01\paperwidth,0){100}{\line(1,0){.005\paperwidth}}}}
 
 \input{meta.tex}
-\input{\bewerberInfos}
+\input{\applicantInfo}
 %\input{../DIN5008/din5008frame.tex}
+
 \farbe{blue}
+
 \begin{document}
-\input{\anschreibenRef}
+
+\input{\letterContent}
 %bottom=22.5mm
+
 \end{document}
-
-

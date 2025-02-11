@@ -1,0 +1,12 @@
+% 'outputDir' and 'sourceDir' are required to be provided to pdflatex on build
+% This can be achieved for example like this:
+% ```shell
+% pdflatex "\def\sourceDir{./source} \def\outputDir{./build} \input{meta.tex}" 
+% ```
+\newcommand* \buildDir              {\outputDir}
+\newcommand* \attachmentsDir        {\sourceDir/attachments}
+\newcommand* \contentDir            {\sourceDir/content}
+\newcommand* \letterContent         {\contentDir/Inhalt-Anschreiben.tex}
+\newcommand* \applicantInfo         {\contentDir/BewerberInfos.tex}
+\newcommand* \cvContent              {\contentDir/Inhalt-CV.tex}
+\newcommand* \attachmentsContent    {\contentDir/Inhalt-Anlagen.tex}

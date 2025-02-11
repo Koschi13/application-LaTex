@@ -1,15 +1,18 @@
-\ProvidesPackage{Vorlage_Bewerbung}
+\ProvidesPackage{templateApplication}
 
-% ============ Packete ============
-\RequirePackage[utf8]{inputenc}     
-\RequirePackage{GemeinsameDaten}
+% ============ Pakets ============
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{sharedData}
 \RequirePackage{calc,layout,lastpage,lipsum}
 \RequirePackage[ngerman]{babel}
 \RequirePackage{pdfpages}
 \RequirePackage[pdftex,unicode]{hyperref} %pdftex
 \RequirePackage{bookmark}
-\usepackage[a4paper,%showframe,showcrop
-	]{geometry}
+\usepackage[
+	a4paper,
+	%showframe,
+	%showcrop
+]{geometry}
 
 % ============ Commands ============
 % bei includepdf als zweites argument angeben --> Bookmark auf Seitenanfang statt auf Pseudochapter 
@@ -45,7 +48,7 @@
 {	\restoregeometry
 	\par\noindent\ignorespacesafterend%
 	\clearpage}
-	
+
 \newenvironment{bildSeiteB}[4]%
 {	\clearpage%
 	\pagestyle{empty}%

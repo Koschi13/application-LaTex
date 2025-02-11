@@ -5,13 +5,13 @@ Latex Bewerbungsvorlage konform zu DIN5008. Siehe [PDF Beispiel](https://github.
  Diskussion
 ----------
 [Google Group](https://groups.google.com/forum/#!forum/latex-bewerbungsvorlage)   
-[Golatex Forum (alt)](http://www.golatex.de/bewerbungsvorlage-anschreiben-koma-lebenslauf-moderncv-t10684.html)
+[Golatex Forum (alt)](http://www.golatex.de/bewerbungsvorlage-letter-koma-lebenslauf-moderncv-t10684.html)
 
 Vorlage
 --------
 * ```meta.tex``` Referenzen zum Anschreiben, Lebenslauf, etc ...
 
-* ```anschreiben.tex``` Anschreiben einzeln. 
+* ```letter.tex``` Anschreiben einzeln. 
 * ```cv.tex``` Lebenslauf einzeln.
 * ```Bewerbung_Einzeln.tex``` Anschreiben und CV müssen vorher erzeugt werden.  
 * ```Bewerbung_Komplett.tex``` Alles in einem Rutsch, benötigt shell-escape. Siehe Kommentar.  
@@ -32,6 +32,6 @@ Folgende Punkte sind mir aktuell ein Dorn im Auge:
 
 Notizen
 ----------
-Für das Bewerbungsfoto: Seitenverhältnis 3:2 
+Für das Bewerbungsphoto: Seitenverhältnis 3:2 
 
 
