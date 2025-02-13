@@ -13,133 +13,126 @@
 \newcommand* \degreeTitle {}
 \newcommand* \myName {}
 \newcommand* \mySurname {}
-\newcommand* \street {}
-\newcommand* \zipCode {}
-\newcommand* \city {}
-\newcommand* \nationality {}
+\newcommand* \myStreet {}
+\newcommand* \myZipCode {}
+\newcommand* \myCity {}
+\newcommand* \myNationality {}
 \newcommand* \phoneNumber {}
 \newcommand* \myEmail {}
-\newcommand* \sig{\\\\\hspace*{7mm} {\scriptsize \myName \ \mySurname}}
-\newcommand* \foto {}
-\newcommand* \fotoHoehe {4cm}
-\newcommand* \fotoRahmen {1pt}
+\newcommand* \mySig{\\\\\hspace*{7mm} {\scriptsize \myName \ \mySurname}}
+\newcommand* \myPicture {}
+\newcommand* \myPictureHeight {4cm}
+\newcommand* \myPictureBorder {1pt}
 \newcommand* \myFullName {\myName \ \mySurname}
-\newcommand* \addresse {\street\\\zipCode \ \city}
-\newcommand* \unterschriftsOrt {\city}
+\newcommand* \myAddress {\myStreet\\\myZipCode \ \myCity}
+\newcommand* \mySigCity {\myCity}
+
+%% ------------- Priv Data Helpers -------------
+\def \myName #1{\renewcommand* \myName {#1}}
+\def \mySurname #1{\renewcommand* \mySurname {#1}}
+\def \myStreet #1{\renewcommand* \myStreet {#1}}
+\def \myZipCode #1{\renewcommand* \myZipCode {#1}}
+\def \myCity #1{\renewcommand* \myCity {#1}}
+\def \myNationality #1{\renewcommand* \myNationality {#1}}
+\def \myPhoneNumber #1{\renewcommand* \phoneNumber {#1}}
+\def \myEmail #1{\renewcommand* \myEmail {\href{mailto:#1}{#1}}}
+\def \mySig[#1][#2]#3 {\renewcommand \mySig {\iftoggle{haendischeUnterschrift}{\vspace{1.5\baselineskip}}{\includegraphics[scale=#1]{#3}} {#2 \scriptsize \degreeTitle \myName \ \mySurname}}}
+\def \myPicture[#1][#2]#3 {\renewcommand* \myPicture {#3} \renewcommand* \myPictureHeight {#1} \renewcommand* \myPictureBorder {#2}}
+\def \mySigCity #1{\renewcommand* \mySigCity {#1}}
+
 
 % ============ Config ============
 \AtEndPreamble{
-	\hypersetup{%
-		hidelinks,
-		%bookmarks=true,         % show bookmarks bar?
-		pdfdisplaydoctitle=true,
-		bookmarksopen=true,
-		pdfpagelayout=OneColumn,% SinglePage / OneColumn 
-		% pdfpagetransition={Dissolve},
-		% Blinds 	/Dm | Box 	/M | Dissolve | Glitter 	/Di | Split 	/Dm /M | Wipe 	/Di 
-		% /Di= direction  in degrees, generally in 90 steps | /Dm horizontal (/H) or vertical (/V) | 
-		% /M is motion, in (/I) or out (/O).
-		unicode=true,          % non-Latin characters in Acrobat bookmarks
-		%pdftoolbar=true,        % show Acrobat toolbar?
-		%pdfmenubar=true,        % show Acrobat menu?
-		pdffitwindow=true,     % window fit to page when opened
-		pdfstartview={FitH},    % fits the FitV/FitH of the page to the window
-		pdftitle={Bewerbung - \myFullName},    % title
-		pdfauthor={\myFullName},     % author
-		pdfsubject={Bewerbung},   % subject of the document
-		pdfcreator={\myFullName},   % creator of the document
-		pdfproducer={\myFullName}, % producer of the document
-		pdfkeywords={Bewerbung} {\degreeTitle} {\myName} {\mySurname}, % list of keywords
-		pdfnewwindow=true,       % links in new window
-		colorlinks=false,        % false: boxed links; true: colored links
-		linkcolor=blue,          % color of internal links (change box color with linkbordercolor)
-		citecolor=blue,          % color of links to bibliography
-		filecolor=blue,          % color of file links
-		urlcolor=blue            % color of external links
-	}
+    \hypersetup{%
+        hidelinks,
+        %bookmarks=true,                                                % show bookmarks barn?
+        pdfdisplaydoctitle=true,
+        bookmarksopen=true,
+        pdfpagelayout=OneColumn,                                        % SinglePage / OneColumn 
+        unicode=true,                                                   % non-Latin characters in Acrobat bookmarks
+        %pdftoolbar=true,                                               % show Acrobat toolbar?
+        %pdfmenubar=true,                                               % show Acrobat menu?
+        pdffitwindow=true,                                              % window fit to page when opened
+        pdfstartview={FitH},                                            % fits the FitV/FitH of the page to the window
+        pdftitle={Bewerbung - \myFullName},                             % title
+        pdfauthor={\myFullName},                                        % author
+        pdfsubject={Bewerbung},                                         % subject of the document
+        pdfcreator={\myFullName},                                       % creator of the document
+        pdfproducer={\myFullName},                                      % producer of the document
+        pdfkeywords={Bewerbung} {\degreeTitle} {\myName} {\mySurname},  % list of keywords
+        pdfnewwindow=true,                                              % links in new window
+        colorlinks=false,                                               % false: boxed links; true: colored links
+        linkcolor=blue,                                                 % color of internal links (change box color with linkbordercolor)
+        citecolor=blue,                                                 % color of links to bibliography
+        filecolor=blue,                                                 % color of file links
+        urlcolor=blue                                                   % color of external links
+    }
 }
 
 
-%% ------------- Priv Data Helpers -------------
-\def \meinVorname #1{\renewcommand* \myName {#1}}
-\def \meinNachname #1{\renewcommand* \mySurname {#1}}
-\def \meineStrasse #1{\renewcommand* \street {#1}}
-\def \meinePLZ #1{\renewcommand* \zipCode {#1}}
-\def \meinWohnort #1{\renewcommand* \city {#1}}
-\def \myNationality #1{\renewcommand* \nationality {#1}}
-\def \meineMobilNr #1{\renewcommand* \phoneNumber {#1}}
-\def \meineEmail #1{\renewcommand* \myEmail {\href{mailto:#1}{#1}}}
-\def \unterschrift[#1][#2]#3 {\renewcommand \sig {\iftoggle{haendischeUnterschrift}{\vspace{1.5\baselineskip}}{\includegraphics[scale=#1]{#3}} {#2 \scriptsize \degreeTitle \myName \ \mySurname}}}
-\def \foto[#1][#2]#3 {\renewcommand* \foto {#3} \renewcommand* \fotoHoehe {#1} \renewcommand* \fotoRahmen {#2}}
-\def \meinUnterschriftsOrt #1{\renewcommand* \unterschriftsOrt {#1}}
-
-%\newcommand* xxxxxxx {}  
-%\def xxxxxxx #1{\renewcommand* xxxxxxx {#1}}
-
-
-%% ============= Farben =============
+%% ============= Colors =============
 % loads a color scheme
 \newcommand*{\farbe}[1]{
-	\RequirePackage{moderncvcolor#1}} % imports {color0}{color1}{color2}
+    \RequirePackage{moderncvcolor#1}
+} % imports {color0}{color1}{color2}
+
 \AtEndPreamble{
-	\definecolor{firstnamecolor}{rgb}{0.65,0.65,0.65}
-	\definecolor{familynamecolor}{rgb}{0.45,0.45,0.45}
-	\definecolor{footersymbolcolor}{rgb}{0.30,0.65,0.15}
-	\definecolor{addresscolor}{rgb}{0.35,0.35,0.35} %grau
-	%\definecolor{rulecolor}{rgb}{0.20,0.40,0.85}
-	%\colorlet{firstnamecolor}{color1!50}
-	%\colorlet{familynamecolor}{color1!100}
-	\colorlet{rulecolor}{color1}
+    \definecolor{firstnamecolor}{rgb}{0.65,0.65,0.65}
+    \definecolor{familynamecolor}{rgb}{0.45,0.45,0.45}
+    \definecolor{footersymbolcolor}{rgb}{0.30,0.65,0.15}
+    \definecolor{addresscolor}{rgb}{0.35,0.35,0.35} %grau
+    %\definecolor{rulecolor}{rgb}{0.20,0.40,0.85}
+    %\colorlet{firstnamecolor}{color1!50}
+    %\colorlet{familynamecolor}{color1!100}
+    \colorlet{rulecolor}{color1}
 }
 
 %% ============= Font  =============
 \AtEndPreamble{
+    \usepackage{amssymb} % square 
+    %\usepackage{pxfonts}
+    %\usepackage{txfonts}
+    %\RequirePackage{lmodern}
+    \usepackage[defaultsans]{opensans}
+    %\usepackage[]{helvet}
 
-
-	\usepackage{amssymb} % square 
-	%\usepackage{pxfonts}
-	%\usepackage{txfonts}
-	%\RequirePackage{lmodern}
-	\usepackage[defaultsans]{opensans}
-	%\usepackage[]{helvet}
-
-	%\renewcommand*{\familydefault}{\rmdefault}% nutze serifenlose Schrift
-	\renewcommand*{\familydefault}{\sfdefault}% nutze serifenlose Schrift
-	\renewcommand*{\seriesdefault}{l} %light
-	\RequirePackage[T1]{fontenc}
-	%\fontshape{li}
-	%\renewcommand*{\seriesdefault}{eb}% Open Sans: l, cl, m, sb, b (bx), eb
-	%\renewcommand*{\shapedefault}{\sfdefault}}% Open Sans: n, it (sl), sc, scit (scsl)
-	\selectfont
+    %\renewcommand*{\familydefault}{\rmdefault}% nutze serifenlose Schrift
+    \renewcommand*{\familydefault}{\sfdefault}% nutze serifenlose Schrift
+    \renewcommand*{\seriesdefault}{l} %light
+    \RequirePackage[T1]{fontenc}
+    %\fontshape{li}
+    %\renewcommand*{\seriesdefault}{eb}% Open Sans: l, cl, m, sb, b (bx), eb
+    %\renewcommand*{\shapedefault}{\sfdefault}}% Open Sans: n, it (sl), sc, scit (scsl)
+    \selectfont
 }
 
-%% ============= Abstaende  =============
+%% ============= Spacing  =============
 \newcommand* \fussAbstand {22.25mm}
 \newcommand \fussLinie[2]{\vbox to 0pt{\color{rulecolor}#1\rule{\textwidth+#2}{0.7pt}}}
 
-%% ============= Funktionen =============
+%% ============= functions =============
 \newcommand \kopfName {\strut\ignorespaces %
-	%\large \color{firstnamecolor} Dipl. Inf. (FH) \& M.Sc. 
-	\huge{%
-		\color{familynamecolor}\degreeTitle%
-		\color{familynamecolor}\myName\ % Farbe Vorname übernehmen
-		\color{familynamecolor}\mySurname% Farbe Nachname übernehmen%
-	}}
+    %\large \color{firstnamecolor} Dipl. Inf. (FH) \& M.Sc. 
+    \huge{%
+        \color{familynamecolor}\degreeTitle%
+        \color{familynamecolor}\myName\ % Farbe Vorname übernehmen
+        \color{familynamecolor}\mySurname% Farbe Nachname übernehmen%
+    }}
 
 \newcommand{\kopfZeile}[1]{%
-	\begin{minipage}[c][][b]{\textwidth} %
-		\raggedleft {\raisebox{-1\baselineskip}{\kopfName}}
-		\vspace{2pt}{\parbox{\textwidth}{\color{rulecolor}\rule{\textwidth}{1.5pt}}}%
-		#1%
-	\end{minipage}%
+    \begin{minipage}[c][][b]{\textwidth} %
+        \raggedleft {\raisebox{-1\baselineskip}{\kopfName}}
+        \vspace{2pt}{\parbox{\textwidth}{\color{rulecolor}\rule{\textwidth}{1.5pt}}}%
+        #1%
+    \end{minipage}%
 }
 
 \newcommand \anschriftKopfZeile {%
-	\kopfZeile{%
-		\\\vspace{0.1\baselineskip}\addresssymbol \addresse%
-		\if\relax\phoneNumber\relax\else 	\\\mobilesymbol \phoneNumber\fi%
-		\\\emailsymbol \myEmail% \if\relax\myEmail\relax\else\fi%
-	}%
+    \kopfZeile{%
+        \\\vspace{0.1\baselineskip}\addresssymbol \myAddress%
+        \if\relax\phoneNumber\relax\else    \\\mobilesymbol \phoneNumber\fi%
+        \\\emailsymbol \myEmail% \if\relax\myEmail\relax\else\fi%
+    }%
 }
 
 %% ============= Symbole =============
@@ -153,11 +146,11 @@
 
 \renewcommand*{\myMarvosymbol}[1]{{\fontfamily{mvs}\fontencoding{U}\fontseries{m}\fontshape{n}\selectfont\char#1}}
 \newcommand{\oldSymbols}{
-	\renewcommand*{\mobilesymbol}{\myMarvosymbol{72}~}
-	\renewcommand*{\phonesymbol}{\myMarvosymbol{84}~}
-	\renewcommand*{\meinFaxSymbol}{\myMarvosymbol{118}~}
-	\renewcommand*{\emailsymbol}{\myMarvosymbol{66}~}
-	\renewcommand*{\homepagesymbol}{{\Large\myMarvosymbol{205}}~}
+    \renewcommand*{\mobilesymbol}{\myMarvosymbol{72}~}
+    \renewcommand*{\phonesymbol}{\myMarvosymbol{84}~}
+    \renewcommand*{\meinFaxSymbol}{\myMarvosymbol{118}~}
+    \renewcommand*{\emailsymbol}{\myMarvosymbol{66}~}
+    \renewcommand*{\homepagesymbol}{{\Large\myMarvosymbol{205}}~}
 }
 
 

@@ -11,7 +11,7 @@
 % ============ Pakets ============
 \PassOptionsToPackage{pdfpagelabels=false}{hyperref} 
 \RequirePackage{sharedData}
-\RequirePackage[english,ngerman]{babel}	%deutsch. LAST language in the option list will be active
+\RequirePackage[english,ngerman]{babel} %deutsch. LAST language in the option list will be active
 \selectlanguage{ngerman}
 \RequirePackage{calc,layout,lastpage,lipsum,verbatim}
 \RequirePackage{tabu} 
@@ -34,52 +34,52 @@
 \renewcommand* \pdfpagemode {UseOutlines}%open pdf with bookmark tab
 
 \@ifclassloaded{moderncv}{
-	\moderncvstyle{classic}
-	\firstname{\myName}
-	\familyname{\mySurname}
-	\moderncvcolor{blue} % 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+    \moderncvstyle{classic}
+    \firstname{\myName}
+    \familyname{\mySurname}
+    \moderncvcolor{blue} % 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 }% ELSE >
 {
   \setlength\paperheight{297mm}
   \setlength\paperwidth{210mm}
-	\NewDocumentCommand{\photo}{O{64pt}O{0.4pt}m}{\def\@photowidth{#1}\def\@photoframewidth{#2}\def\@photo{#3}}
-	
+    \NewDocumentCommand{\photo}{O{64pt}O{0.4pt}m}{\def\@photowidth{#1}\def\@photoframewidth{#2}\def\@photo{#3}}
+    
 
-	\newlength{\hintscolumnwidth}
-	\setlength{\hintscolumnwidth}{0.175\textwidth}
-	\newlength{\separatorcolumnwidth}
-	\setlength{\separatorcolumnwidth}{0.025\textwidth}
-	\newlength{\maincolumnwidth}
-	\setlength{\maincolumnwidth}{\textwidth-\separatorcolumnwidth-\hintscolumnwidth}
+    \newlength{\hintscolumnwidth}
+    \setlength{\hintscolumnwidth}{0.175\textwidth}
+    \newlength{\separatorcolumnwidth}
+    \setlength{\separatorcolumnwidth}{0.025\textwidth}
+    \newlength{\maincolumnwidth}
+    \setlength{\maincolumnwidth}{\textwidth-\separatorcolumnwidth-\hintscolumnwidth}
 
-	\newcommand*{\cvitem}[3][.25em]{%
-		\begin{tabular}{@{}p{\hintscolumnwidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
-			\raggedleft\hintstyle{#2} &{#3}%
-		\end{tabular}%
-		\par\addvspace{#1}%
-	}
-	
-	\newcommand*{\hintstyle}[1]{{\textcolor{color0}{#1}}}
-	\newcommand*{\sectionfont}{\Large\mdseries\upshape}
-	\newcommand*{\sectionstyle}[1]{{\sectionfont\textcolor{color1}{#1}}}
-	
-	\pagestyle{fancy}
-	\cfoot{}
-	\renewcommand{\headrulewidth}{0pt}
-	\renewcommand{\footrulewidth}{0pt}
-	
-	% color blue
-	\definecolor{color0}{rgb}{0,0,0}% black
-	\definecolor{color1}{rgb}{0.22,0.45,0.70}% light blue
-	\definecolor{color2}{rgb}{0.45,0.45,0.45}% dark grey
+    \newcommand*{\cvitem}[3][.25em]{%
+        \begin{tabular}{@{}p{\hintscolumnwidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
+            \raggedleft\hintstyle{#2} &{#3}%
+        \end{tabular}%
+        \par\addvspace{#1}%
+    }
+    
+    \newcommand*{\hintstyle}[1]{{\textcolor{color0}{#1}}}
+    \newcommand*{\sectionfont}{\Large\mdseries\upshape}
+    \newcommand*{\sectionstyle}[1]{{\sectionfont\textcolor{color1}{#1}}}
+    
+    \pagestyle{fancy}
+    \cfoot{}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+    
+    % color blue
+    \definecolor{color0}{rgb}{0,0,0}% black
+    \definecolor{color1}{rgb}{0.22,0.45,0.70}% light blue
+    \definecolor{color2}{rgb}{0.45,0.45,0.45}% dark grey
 }
 
 % ============ Daten Abgleich ============
-\photo[\fotoHoehe][\fotoRahmen]{\foto}
+\photo[\myPictureHeight][\myPictureBorder]{\myPicture}
 
 \newcommand \unterschriftLL{\begin{minipage}{15cm}%
-	\unterschriftsOrt , \today
-	\\\sig%
+    \mySigCity , \today
+    \\\mySig%
 \end{minipage}}
 
 % ============ Style ============
@@ -90,13 +90,13 @@
 \newcommand \headSep {4mm}
 \newcommand \defTop {29.5mm}%30mm default
 \RequirePackage[
-	%a4paper,scale=0.5
-	%,showframe,showcrop%
-	,left=\iftoggle{breiterLebenslauf}{20mm}{25mm}, right=\iftoggle{breiterLebenslauf}{20mm}{25mm}
-	,headheight=25mm
-	,top=\defTop+\headSep
-	,headsep=\headSep
-	,bottom=\fussAbstand+0.35mm % \fussAbstand 22.5mm 35.5mm
+    %a4paper,scale=0.5
+    %,showframe,showcrop%
+    ,left=\iftoggle{breiterLebenslauf}{20mm}{25mm}, right=\iftoggle{breiterLebenslauf}{20mm}{25mm}
+    ,headheight=25mm
+    ,top=\defTop+\headSep
+    ,headsep=\headSep
+    ,bottom=\fussAbstand+0.35mm % \fussAbstand 22.5mm 35.5mm
 ]{geometry}
 
 
@@ -108,8 +108,8 @@
 
 % ------------ Fuss ------------
 \fancyfoot[OR]{% Fusstext verschieben
-	\hspace*{\iftoggle{breiterLebenslauf}{0mm}{-5mm}}\parbox{\textwidth+\iftoggle{breiterLebenslauf}{0mm}{10mm}}{%
-	\raggedleft Lebenslauf Seite \thepage /\pageref{LastPage}
+    \hspace*{\iftoggle{breiterLebenslauf}{0mm}{-5mm}}\parbox{\textwidth+\iftoggle{breiterLebenslauf}{0mm}{10mm}}{%
+    \raggedleft Lebenslauf Seite \thepage /\pageref{LastPage}
 }}
 \renewcommand{\footrulewidth}{10pt}
 \renewcommand{\footrule}{\iftoggle{breiterLebenslauf}{\fussLinie{\hspace{0mm}}{0mm}}{\fussLinie{\hspace{-5mm}}{10mm}}}
@@ -117,21 +117,21 @@
 
 % ------------ Titel ------------
 \newcommand \pic {%
-	\label{uref}
+    \label{uref}
      \color{color1}%
-	 \framebox{\includegraphics[width=\@photowidth]{\@photo}}}
+     \framebox{\includegraphics[width=\@photowidth]{\@photo}}}
 
 \newcommand \picLine {\makebox[\the\textwidth+\iftoggle{breiterLebenslauf}{0mm}{5mm}][r]{\pic}}%
 
 \newcommand* \titel [1] {%
-	\iftoggle{noPhoto}{}{%
-	\newlength{\picLH}%
-	\settoheight{\picLH}{\picLine}%
-	\vspace*{0mm}%
-	\picLine%
-	\vspace{-\picLH}}% 
-	\par\iftoggle{lebenslaufTitelZentriert}{\centering}{}
-	{\color{color1} \Huge  #1}
+    \iftoggle{noPhoto}{}{%
+    \newlength{\picLH}%
+    \settoheight{\picLH}{\picLine}%
+    \vspace*{0mm}%
+    \picLine%
+    \vspace{-\picLH}}% 
+    \par\iftoggle{lebenslaufTitelZentriert}{\centering}{}
+    {\color{color1} \Huge  #1}
 }
 
 
@@ -149,13 +149,13 @@
   \par\addvspace{5\sectionsAbstandsMulti}% 2.5ex default
   \phantomsection{}% reset the anchor for hyperrefs
   \addcontentsline{toc}{section}{#1}%
-	%
-	\settoheight \sectionSchriftHoehe {\sectionBeschriftung{#1}}
-	
+    %
+    \settoheight \sectionSchriftHoehe {\sectionBeschriftung{#1}}
+    
   \parbox[t]{\hintscolumnwidth}%
-	{\strut\raggedleft\raisebox{.5\sectionSchriftHoehe-.5\dekoHoehe}{\color{color1}\rule{\hintscolumnwidth}{\dekoHoehe}}}%
+    {\strut\raggedleft\raisebox{.5\sectionSchriftHoehe-.5\dekoHoehe}{\color{color1}\rule{\hintscolumnwidth}{\dekoHoehe}}}%
   %
-	\hspace{\separatorcolumnwidth}%
+    \hspace{\separatorcolumnwidth}%
   \sectionBeschriftung{#1}%
   \par\nobreak\addvspace{1.5\sectionsAbstandsMulti}\@afterheading}% to avoid a pagebreak after the heading | 1ex default
 
@@ -173,7 +173,7 @@
 %\newcommand* \datumsZellenBreiteAlt {11mm}
 %\newcommand* \datumsZifferMonatsAbstandAlt{-0.8mm}
 %\newcommand \zeitspanneAlt[4]{
-%	{{\parbox{\datumsZellenBreiteAlt}{\centering{#2\\\vspace{-2.8mm}\tiny #1}}}\hspace{\datumsZifferMonatsAbstandAlt}{\raisebox{0.4mm}{\color{blue}$\rightarrow$}}\hspace{\datumsZifferMonatsAbstandAlt}{\parbox{\datumsZellenBreiteAlt}{\centering{#4\\\vspace{-2.8mm}\tiny #3}}}}
+%   {{\parbox{\datumsZellenBreiteAlt}{\centering{#2\\\vspace{-2.8mm}\tiny #1}}}\hspace{\datumsZifferMonatsAbstandAlt}{\raisebox{0.4mm}{\color{blue}$\rightarrow$}}\hspace{\datumsZifferMonatsAbstandAlt}{\parbox{\datumsZellenBreiteAlt}{\centering{#4\\\vspace{-2.8mm}\tiny #3}}}}
 %}
 
 \newlength \datumsVKorrektur
@@ -190,22 +190,22 @@
 \newcommand* \bisTxt [1]{{\parbox[t]{\datumsZellenBreite}{\centering{#1}}}}
 
 \newcommand \vonBis[2]{%
-	#1 %extra space
-	\hspace{-0.4mm}%
-	{%raisebox{-0.35mm}
-	{\color{color1}--}}\hspace{-0.2mm}%
-	\ #2%
+    #1 %extra space
+    \hspace{-0.4mm}%
+    {%raisebox{-0.35mm}
+    {\color{color1}--}}\hspace{-0.2mm}%
+    \ #2%
 }
 \newcommand \zeitspanne[4]{%
-	\vonBis{%
-		\schickesDatum{#1}{#2}%
-	}{%
-		\schickesDatum{#3}{#4}%
-	}%
+    \vonBis{%
+        \schickesDatum{#1}{#2}%
+    }{%
+        \schickesDatum{#3}{#4}%
+    }%
 }
 
 \newcommand \schickesDatum[2]{%
-	{\parbox[t]{\datumsZellenBreite}{\centering{#2\baselineskip=\datumsZifferMonatsAbstand\newline\par\vspace{\datumsZifferMonatsAbstand}\tiny{\strut#1}}}}%
+    {\parbox[t]{\datumsZellenBreite}{\centering{#2\baselineskip=\datumsZifferMonatsAbstand\newline\par\vspace{\datumsZifferMonatsAbstand}\tiny{\strut#1}}}}%
 }
 
 \def \seit[#1.#2]#3{#3 \schickesDatum{\monthname[#1]}{#2}}
@@ -220,14 +220,14 @@
 \setlength\hauptSpaltenBreite {\maincolumnwidth}
 
 
-	
+    
 
 
 
 \newlength{\stadtBreite}
 \newcommand* \laengsteStadt[1]{
-	\settowidth{\stadtBreite}{#1}}
-	
+    \settowidth{\stadtBreite}{#1}}
+    
 % ============ CV Eintragsspalten ============
 
 %\eintrag{Dauer}{Firma}{Ort}{Beschreibung ..... mehrzeilig}
@@ -248,29 +248,29 @@
 \end{tabu}%
 \par\addvspace{#1}}
 
-%\eintrag{Dauer}{Firma}{JobTitel}{Ort}{Beschreibung ..... mehrzeilig}	- mit Aufzaehlungen
+%\eintrag{Dauer}{Firma}{JobTitel}{Ort}{Beschreibung ..... mehrzeilig}   - mit Aufzaehlungen
 \newcommand \eintragL [5]{\eintragLDrei{#1}{#2}{#3}{#4}{#5}}
-	
+    
 \newcommand* \eintragLZwei [5]{%
-	\begin{tabu} to \textwidth {@{} p{\hintscolumnwidth} @{\hspace{\separatorcolumnwidth}}%
-	p{\maincolumnwidth}}{  
-		\raggedleft\hintstyle{#1} &{\mdseries{#2}}%
-		\if\relax\detokenize{#3}\relax\else{\textit{ -- #3}}\fi
-		\textit{ -- #4}%
-		\if\relax\detokenize{#5}\relax
-		\else\eintragExtraZeile{#5}\fi%
-	}\end{tabu}%
+    \begin{tabu} to \textwidth {@{} p{\hintscolumnwidth} @{\hspace{\separatorcolumnwidth}}%
+    p{\maincolumnwidth}}{  
+        \raggedleft\hintstyle{#1} &{\mdseries{#2}}%
+        \if\relax\detokenize{#3}\relax\else{\textit{ -- #3}}\fi
+        \textit{ -- #4}%
+        \if\relax\detokenize{#5}\relax
+        \else\eintragExtraZeile{#5}\fi%
+    }\end{tabu}%
   \par\addvspace{\eintragsAbstand}}
-	
+    
 \newcommand* \eintragLDrei [5]{%
-	\begin{tabu} to \textwidth {@{} p{\hintscolumnwidth} @{\hspace{\separatorcolumnwidth}}%
-	p{\maincolumnwidth-\stadtBreite-1em}@{\hspace{1em}} p{\stadtBreite} }{  
-		\raggedleft\hintstyle{#1} &{\mdseries{#2}}%
-		\if\relax\detokenize{#3}\relax\else{\textit{ -- #3}}\fi
-		&\raggedleft{#4}%
-		\if\relax\detokenize{#5}\relax
-		\else\eintragExtraZeile{#5}\fi%
-	}\end{tabu}%
+    \begin{tabu} to \textwidth {@{} p{\hintscolumnwidth} @{\hspace{\separatorcolumnwidth}}%
+    p{\maincolumnwidth-\stadtBreite-1em}@{\hspace{1em}} p{\stadtBreite} }{  
+        \raggedleft\hintstyle{#1} &{\mdseries{#2}}%
+        \if\relax\detokenize{#3}\relax\else{\textit{ -- #3}}\fi
+        &\raggedleft{#4}%
+        \if\relax\detokenize{#5}\relax
+        \else\eintragExtraZeile{#5}\fi%
+    }\end{tabu}%
   \par\addvspace{\eintragsAbstand}}
 
 
