@@ -109,7 +109,7 @@
 % ------------ Fuss ------------
 \fancyfoot[OR]{% Fusstext verschieben
     \hspace*{\iftoggle{breiterLebenslauf}{0mm}{-5mm}}\parbox{\textwidth+\iftoggle{breiterLebenslauf}{0mm}{10mm}}{%
-    \raggedleft Lebenslauf Seite \thepage /\pageref{LastPage}
+    \raggedleft \languageCv Seite \thepage /\pageref{LastPage}
 }}
 \renewcommand{\footrulewidth}{10pt}
 \renewcommand{\footrule}{\iftoggle{breiterLebenslauf}{\fussLinie{\hspace{0mm}}{0mm}}{\fussLinie{\hspace{-5mm}}{10mm}}}
@@ -224,9 +224,9 @@
 
 
 
-\newlength{\stadtBreite}
-\newcommand* \laengsteStadt[1]{
-    \settowidth{\stadtBreite}{#1}}
+% Defines the width of the city column from the provided longestCityName
+\newlength{\cityWidth}
+\newcommand* \longestCityName[1]{\settowidth{\cityWidth}{#1}}
     
 % ============ CV Eintragsspalten ============
 
@@ -264,7 +264,7 @@
     
 \newcommand* \eintragLDrei [5]{%
     \begin{tabu} to \textwidth {@{} p{\hintscolumnwidth} @{\hspace{\separatorcolumnwidth}}%
-    p{\maincolumnwidth-\stadtBreite-1em}@{\hspace{1em}} p{\stadtBreite} }{  
+    p{\maincolumnwidth-\cityWidth-1em}@{\hspace{1em}} p{\cityWidth} }{  
         \raggedleft\hintstyle{#1} &{\mdseries{#2}}%
         \if\relax\detokenize{#3}\relax\else{\textit{ -- #3}}\fi
         &\raggedleft{#4}%

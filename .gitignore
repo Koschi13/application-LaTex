@@ -31,13 +31,7 @@
 *.xdy
 *.tdo
 *.fls
-Priv-**
-Spielwiese/
+*.pdf
 build/
-template/*.pdf
-template/letterGen.tex
-template/cvGen.tex
-tmp/
-Vorlage/meta.tex
-
 .direnv
+content/

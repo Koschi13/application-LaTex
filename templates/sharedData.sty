@@ -10,6 +10,7 @@
 \newtoggle{haendischeUnterschrift}
 
 %% ============= Priv Data =============
+% TODO: get understanding of this pattern and maybe get rid of it!
 \newcommand* \degreeTitle {}
 \newcommand* \myName {}
 \newcommand* \mySurname {}
@@ -17,15 +18,18 @@
 \newcommand* \myZipCode {}
 \newcommand* \myCity {}
 \newcommand* \myNationality {}
-\newcommand* \phoneNumber {}
+\newcommand* \myPhoneNumber {}
 \newcommand* \myEmail {}
-\newcommand* \mySig{\\\\\hspace*{7mm} {\scriptsize \myName \ \mySurname}}
+\newcommand* \myBirthDate {}
+\newcommand* \mySig {}
 \newcommand* \myPicture {}
 \newcommand* \myPictureHeight {4cm}
 \newcommand* \myPictureBorder {1pt}
 \newcommand* \myFullName {\myName \ \mySurname}
 \newcommand* \myAddress {\myStreet\\\myZipCode \ \myCity}
 \newcommand* \mySigCity {\myCity}
+\newcommand* \myWebsite {}
+\newcommand* \myGithub {}
 
 %% ------------- Priv Data Helpers -------------
 \def \myName #1{\renewcommand* \myName {#1}}
@@ -34,12 +38,13 @@
 \def \myZipCode #1{\renewcommand* \myZipCode {#1}}
 \def \myCity #1{\renewcommand* \myCity {#1}}
 \def \myNationality #1{\renewcommand* \myNationality {#1}}
-\def \myPhoneNumber #1{\renewcommand* \phoneNumber {#1}}
+\def \myPhoneNumber #1{\renewcommand* \myPhoneNumber {#1}}
 \def \myEmail #1{\renewcommand* \myEmail {\href{mailto:#1}{#1}}}
+\def \myBirthDate #1{\renewcommand* \myBirthDate {#1}}
 \def \mySig[#1][#2]#3 {\renewcommand \mySig {\iftoggle{haendischeUnterschrift}{\vspace{1.5\baselineskip}}{\includegraphics[scale=#1]{#3}} {#2 \scriptsize \degreeTitle \myName \ \mySurname}}}
 \def \myPicture[#1][#2]#3 {\renewcommand* \myPicture {#3} \renewcommand* \myPictureHeight {#1} \renewcommand* \myPictureBorder {#2}}
-\def \mySigCity #1{\renewcommand* \mySigCity {#1}}
-
+\def \myWebsite[#1]#2 {\renewcommand* \myWebsite {\href{#2}{#1}}}
+\def \myGithub[#1]#2 {\renewcommand* \myGithub {\href{#2}{#1}}}
 
 % ============ Config ============
 \AtEndPreamble{
@@ -129,39 +134,43 @@
 
 \newcommand \anschriftKopfZeile {%
     \kopfZeile{%
-        \\\vspace{0.1\baselineskip}\addresssymbol \myAddress%
-        \if\relax\phoneNumber\relax\else    \\\mobilesymbol \phoneNumber\fi%
-        \\\emailsymbol \myEmail% \if\relax\myEmail\relax\else\fi%
+        \\\vspace{0.1\baselineskip}\addressSymbol \myAddress%
+        % TOOD: Fix if not working when variable is not provided in `applicationtInfo.tex'
+        %\if\relax\myPhoneNumber\relax\else\\\smartphoneSymbol \myPhoneNumber\fi%
+        \\\smartphoneSymbol \myPhoneNumber%
+		\\\githubSymbol \myGithub%
+		\\\websiteSymbol \myWebsite%
+        \\\emailSymbol \myEmail% \if\relax\myEmail\relax\else\fi%
     }%
 }
 
 %% ============= Symbole =============
 \@ifundefined{myMarvosymbol}{\newcommand*{\myMarvosymbol}[1]{}}{}
-\@ifundefined{mobilesymbol}{\newcommand*{\mobilesymbol}{}}{}
-\@ifundefined{phonesymbol}{\newcommand*{\phonesymbol}{}}{}
-\@ifundefined{meinFaxSymbol}{\newcommand*{\meinFaxSymbol}{}}{}
-\@ifundefined{emailsymbol}{\newcommand*{\emailsymbol}{}}{}
-\@ifundefined{homepagesymbol}{\newcommand*{\homepagesymbol}{}}{}
-\@ifundefined{addresssymbol}{\newcommand*{\addresssymbol}{}}{}
+\@ifundefined{smartphoneSymbol}{\newcommand*{\smartphoneSymbol}{}}{}
+\@ifundefined{phoneSymbol}{\newcommand*{\phoneSymbol}{}}{}
+\@ifundefined{emailSymbol}{\newcommand*{\emailSymbol}{}}{}
+\@ifundefined{websiteSymbol}{\newcommand*{\websiteSymbol}{}}{}
+\@ifundefined{addressSymbol}{\newcommand*{\addressSymbol}{}}{}
+\@ifundefined{githubSymbol}{\newcommand*{\githubSymbol}{}}{}
 
 \renewcommand*{\myMarvosymbol}[1]{{\fontfamily{mvs}\fontencoding{U}\fontseries{m}\fontshape{n}\selectfont\char#1}}
 \newcommand{\oldSymbols}{
-    \renewcommand*{\mobilesymbol}{\myMarvosymbol{72}~}
-    \renewcommand*{\phonesymbol}{\myMarvosymbol{84}~}
-    \renewcommand*{\meinFaxSymbol}{\myMarvosymbol{118}~}
-    \renewcommand*{\emailsymbol}{\myMarvosymbol{66}~}
-    \renewcommand*{\homepagesymbol}{{\Large\myMarvosymbol{205}}~}
+    \renewcommand*{\smartphoneSymbol}{\myMarvosymbol{72}~}
+    \renewcommand*{\phoneSymbol}{\myMarvosymbol{84}~}
+    \renewcommand*{\emailSymbol}{\myMarvosymbol{66}~}
+    \renewcommand*{\websiteSymbol}{{\Large\myMarvosymbol{205}}~}
+    \renewcommand*{\githubSymbol}{{\Large\myMarvosymbol{205}}~}
 }
 
 
 \newcommand*{\defaultSymbolHeight}{0.7\baselineskip}
 \newcommand*{\pdfPicPath}{../assets/pdf}
-\renewcommand*{\mobilesymbol}{\includegraphics[height=0.9\baselineskip,margin*=0pt -0.2ex 0pt 0pt]{\pdfPicPath/cell}~}
-\renewcommand*{\phonesymbol}{\includegraphics[height=0.75\baselineskip,margin*=0pt -0.15ex 0pt 0pt]{\pdfPicPath/telefon}~}
-\renewcommand*{\meinFaxSymbol}{\includegraphics[height=\defaultSymbolHeight]{\pdfPicPath/fax}~}
-\renewcommand*{\emailsymbol}{\includegraphics[height=0.7\baselineskip,margin*=0pt -0.15ex 0pt 0pt]{\pdfPicPath/letter}~}
-\renewcommand*{\homepagesymbol}{{\Large\myMarvosymbol{205}}~}
-\renewcommand*{\addresssymbol}{\includegraphics[height=0.9\baselineskip,margin*=0pt -0.15ex 0pt 0pt]{\pdfPicPath/simple-home}~}
+\renewcommand*{\smartphoneSymbol}{\includegraphics[height=0.9\baselineskip,margin*=0pt -0.2ex 0pt 0pt]{\pdfPicPath/cell}~}
+\renewcommand*{\phoneSymbol}{\includegraphics[height=0.75\baselineskip,margin*=0pt -0.15ex 0pt 0pt]{\pdfPicPath/telefon}~}
+\renewcommand*{\emailSymbol}{\includegraphics[height=0.7\baselineskip,margin*=0pt -0.15ex 0pt 0pt]{\pdfPicPath/letter}~}
+\renewcommand*{\websiteSymbol}{{\Large\myMarvosymbol{205}}~}
+\renewcommand*{\addressSymbol}{\includegraphics[height=0.9\baselineskip,margin*=0pt -0.15ex 0pt 0pt]{\pdfPicPath/simple-home}~}
+\renewcommand*{\githubSymbol}{\includegraphics[height=0.9\baselineskip,margin*=0pt -0.15ex 0pt 0pt]{\pdfPicPath/GitHub-Mark}~}
 % <<-- symbols
 
 

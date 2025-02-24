@@ -6,6 +6,7 @@
 
 \input{meta.tex}
 \input{\applicantInfo}
+\input{\languageFile}
 
 \farbe{blue}
 
@@ -19,8 +20,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Letter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \IfFileExists{\letter}{
-    %\includepdf[pages=-, addtotoc={1, pageRef, 0,Anschreiben,letter}]{\letter}
-    \bookmark[page=\thepage,level=0]{Anschreiben}
+    \bookmark[page=\thepage,level=0]{\languageLetter}
     \includepdf[pages=-]{\letter}
 }{
     \Huge ooops \normalsize \letter not found! \\
@@ -34,8 +34,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CV %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \IfFileExists{\cv}{
-    %\includepdf[pages=-, addtotoc={1, pageRef, 0,Lebenslauf,cv}]{\cv}
-    \bookmark[page=\thepage,level=0]{Lebenslauf}
+    \bookmark[page=\thepage,level=0]{\languageCv}
     \includepdf[pages=-]{\cv}
 }{
     \Huge ooops \normalsize \cv not found! \\

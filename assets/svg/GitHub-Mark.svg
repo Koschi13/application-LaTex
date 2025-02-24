@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg2"
+   sodipodi:docname="GitHub-Mark.svg"
+   viewBox="0 0 463.89 438.88"
+   sodipodi:version="0.32"
+   version="1.0"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15)">
+  <defs
+     id="defs478" />
+  <sodipodi:namedview
+     id="base"
+     bordercolor="#666666"
+     inkscape:pageshadow="2"
+     guidetolerance="10"
+     pagecolor="#ffffff"
+     gridtolerance="10000"
+     inkscape:window-height="1004"
+     inkscape:zoom="1.4098083"
+     objecttolerance="10"
+     showgrid="false"
+     borderopacity="1.0"
+     inkscape:current-layer="layer1"
+     inkscape:cx="231.94643"
+     inkscape:cy="219.43852"
+     inkscape:window-y="0"
+     inkscape:window-x="0"
+     inkscape:window-width="1920"
+     inkscape:pageopacity="0.0"
+     inkscape:document-units="px"
+     inkscape:document-rotation="0"
+     inkscape:window-maximized="1" />
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     transform="translate(-42.339 -276.34)">
+    <path
+       d="m 273.78008,292.08338 c -116.07423,0 -210.198564,93.64306 -210.198564,209.16248 0,92.41347 60.228294,170.81648 143.746624,198.47368 10.50506,1.93617 14.36178,-4.53738 14.36178,-10.06187 0,-4.98764 -0.19502,-21.46421 -0.28542,-38.94175 -58.47745,12.6527 -70.81689,-24.67846 -70.81689,-24.67846 -9.56175,-24.17624 -23.33877,-30.60474 -23.33877,-30.60474 -19.0713,-12.98176 1.43757,-12.71504 1.43757,-12.71504 21.10757,1.47205 32.22178,21.55772 32.22178,21.55772 18.74758,31.97289 49.17327,22.72841 61.1681,17.38402 1.8866,-13.5186 7.33406,-22.74922 13.34538,-27.96892 -46.68797,-5.28899 -95.76726,-23.22373 -95.76726,-103.36897 0,-22.83581 8.21122,-41.49443 21.65754,-56.14219 -2.18246,-5.27166 -9.37728,-26.54189 2.03626,-55.35248 0,0 17.65116,-5.6215 57.81959,21.43996 16.76702,-4.63435 34.74884,-6.95846 52.61228,-7.03814 17.86349,0.0797 35.85922,2.40379 52.65756,7.03814 40.11971,-27.06146 57.74649,-21.43996 57.74649,-21.43996 11.4414,28.81059 4.24309,50.08082 2.06062,55.35248 13.47767,14.64776 21.63319,33.30638 21.63319,56.14219 0,80.33573 -49.17327,98.02458 -95.97959,103.20272 7.53942,6.49087 14.25735,19.21976 14.25735,38.73392 0,27.98623 -0.24357,50.51032 -0.24357,57.3995 0,5.56605 3.78363,12.0881 14.43835,10.03415 83.47308,-27.68834 143.62479,-106.06366 143.62479,-198.44596 0,-115.51942 -94.1104,-209.16248 -210.1951,-209.16248"
+       style="fill:#1b1817;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.34722"
+       id="path44" />
+  </g>
+  <metadata
+     id="metadata475">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title></dc:title>
+        <dc:date>2008-10-08T17:41:00</dc:date>
+        <dc:description>black home icon</dc:description>
+        <dc:source>https://openclipart.org/detail/19535/home-by-dynnamitt</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>dynnamitt</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>home</rdf:li>
+            <rdf:li>house</rdf:li>
+            <rdf:li>icon</rdf:li>
+            <rdf:li>silhouette</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>
