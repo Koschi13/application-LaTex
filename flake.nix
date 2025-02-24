@@ -58,6 +58,7 @@
             #texliveFull
             tex
             texstudio
+            uv
           ];
         };
       }
