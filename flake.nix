@@ -37,6 +37,7 @@
               microtype
               moderncv
               multirow
+              multicolrule
               opensans
               pdflscape
               pdfpages

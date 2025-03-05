@@ -17,7 +17,7 @@
         {
             "label": "build max (english)",
             "type": "shell",
-            "command": "./scripts/build.py --content-dir ./content/max/english --attachments-dir ./content/max/attachments",
+            "command": "./scripts/build.py --content-dir ./content/max/english --attachments-dir ./content/max/attachments --language-file ./language/english.tex",
             "group": "build",
             "presentation": {
                 "reveal": "always"
