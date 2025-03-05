@@ -29,6 +29,8 @@
               infwarerr
               koma-script
               lastpage
+              latexindent  # for formatting
+              latexmk # for the LaTeX Workshop VS-Code pulugin
               layouts
               lipsum
               marvosym
@@ -48,8 +50,6 @@
               varwidth
               xcolor
               xkeyval
-              latexmk # for the LaTeX Workshop VS-Code pulugin
-              latexindent  # for formatting
               ;
           });
       in {

@@ -249,9 +249,11 @@
 \par\addvspace{#1}}
 
 %\eintrag{Dauer}{Firma}{JobTitel}{Ort}{Beschreibung ..... mehrzeilig}   - mit Aufzaehlungen
-\newcommand \eintragL [5]{\eintragLDrei{#1}{#2}{#3}{#4}{#5}}
+
+% Switch between \entryLargeOne and \entryLargeTwo for different header format
+\newcommand \entryLarge [5]{\entryLargeOne{#1}{#2}{#3}{#4}{#5}}
     
-\newcommand* \eintragLZwei [5]{%
+\newcommand* \entryLargeOne [5]{%
     \begin{tabu} to \textwidth {@{} p{\hintscolumnwidth} @{\hspace{\separatorcolumnwidth}}%
     p{\maincolumnwidth}}{  
         \raggedleft\hintstyle{#1} &{\mdseries{#2}}%
@@ -262,7 +264,7 @@
     }\end{tabu}%
   \par\addvspace{\eintragsAbstand}}
     
-\newcommand* \eintragLDrei [5]{%
+\newcommand* \entryLargeTwo [5]{%
     \begin{tabu} to \textwidth {@{} p{\hintscolumnwidth} @{\hspace{\separatorcolumnwidth}}%
     p{\maincolumnwidth-\cityWidth-1em}@{\hspace{1em}} p{\cityWidth} }{  
         \raggedleft\hintstyle{#1} &{\mdseries{#2}}%
