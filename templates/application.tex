@@ -1,18 +1,19 @@
+\input{meta.tex}
+\input{\languageFile}
+
 \documentclass[12pt,a4paper,oneside]{book}
 
 \usepackage{verbatim,currfile}
 \usepackage[utf8]{inputenc}     
 \usepackage{templateApplication}
 
-\input{meta.tex}
 \input{\applicantInfo}
-\input{\languageFile}
 
 \farbe{blue}
 
 % Filename without blanks
-\newcommand* \letter {\outputDir letter.pdf}
-\newcommand* \cv {\outputDir cv.pdf}
+\newcommand* \letter {\outputDir/letter.pdf}
+\newcommand* \cv {\outputDir/cv.pdf}
 
 \begin{document}
 
@@ -27,7 +28,7 @@
     
     Probably the \textbf{\textbackslash outputDir} variable wasn't set correct or \textbf{letter.tex} was not built.
     \\\\
-    \textbf{no letter} found in path "\outputDir\textbackslash letter.pdf" \hspace{1pt}. Please check "\textbackslash builDir" \hspace{1pt} \newline\\
+    \textbf{no letter} found in path "\outputDir/letter.pdf" \hspace{1pt}. Please check "\textbackslash builDir" \hspace{1pt} \newline\\
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -41,7 +42,7 @@
     
     Probably the \textbf{\textbackslash outputDir} variable wasn't set correct or \textbf{cv.tex} was not built.
     \\\\
-    \textbf{no cv} found in path "\outputDir\textbackslash cv.pdf" \hspace{1pt}. Please check "\textbackslash builDir" \hspace{1pt} \newline\\
+    \textbf{no cv} found in path "\outputDir/cv.pdf" \hspace{1pt}. Please check "\textbackslash builDir" \hspace{1pt} \newline\\
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

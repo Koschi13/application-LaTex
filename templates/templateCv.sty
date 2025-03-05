@@ -11,8 +11,8 @@
 % ============ Pakets ============
 \PassOptionsToPackage{pdfpagelabels=false}{hyperref} 
 \RequirePackage{sharedData}
-\RequirePackage[english,ngerman]{babel} %deutsch. LAST language in the option list will be active
-\selectlanguage{ngerman}
+\RequirePackage[\languageBabel]{babel} %deutsch. LAST language in the option list will be active
+\selectlanguage{\languageBabel}
 \RequirePackage{calc,layout,lastpage,lipsum,verbatim}
 \RequirePackage{tabu} 
 \RequirePackage{datetime,setspace}
@@ -109,7 +109,7 @@
 % ------------ Fuss ------------
 \fancyfoot[OR]{% Fusstext verschieben
     \hspace*{\iftoggle{breiterLebenslauf}{0mm}{-5mm}}\parbox{\textwidth+\iftoggle{breiterLebenslauf}{0mm}{10mm}}{%
-    \raggedleft \languageCv Seite \thepage /\pageref{LastPage}
+    \raggedleft \languageCv \languagePage \thepage /\pageref{LastPage}
 }}
 \renewcommand{\footrulewidth}{10pt}
 \renewcommand{\footrule}{\iftoggle{breiterLebenslauf}{\fussLinie{\hspace{0mm}}{0mm}}{\fussLinie{\hspace{-5mm}}{10mm}}}
@@ -249,11 +249,12 @@
 \par\addvspace{#1}}
 
 %\eintrag{Dauer}{Firma}{JobTitel}{Ort}{Beschreibung ..... mehrzeilig}   - mit Aufzaehlungen
-\newcommand \eintragL [5]{\eintragLDrei{#1}{#2}{#3}{#4}{#5}}
+
+% Switch between \entryLargeOne and \entryLargeTwo for different header format
+\newcommand \entryLarge [5]{\entryLargeOne{#1}{#2}{#3}{#4}{#5}}
     
-\newcommand* \eintragLZwei [5]{%
-    \begin{tabu} to \textwidth {@{} p{\hintscolumnwidth} @{\hspace{\separatorcolumnwidth}}%
-    p{\maincolumnwidth}}{  
+\newcommand* \entryLargeOne [5]{%
+    \begin{tabu} to \textwidth {@{} p{\hintscolumnwidth} @{\hspace{\separatorcolumnwidth}} p{\maincolumnwidth}}{%
         \raggedleft\hintstyle{#1} &{\mdseries{#2}}%
         \if\relax\detokenize{#3}\relax\else{\textit{ -- #3}}\fi
         \textit{ -- #4}%
@@ -262,9 +263,8 @@
     }\end{tabu}%
   \par\addvspace{\eintragsAbstand}}
     
-\newcommand* \eintragLDrei [5]{%
-    \begin{tabu} to \textwidth {@{} p{\hintscolumnwidth} @{\hspace{\separatorcolumnwidth}}%
-    p{\maincolumnwidth-\cityWidth-1em}@{\hspace{1em}} p{\cityWidth} }{  
+\newcommand* \entryLargeTwo [5]{%
+    \begin{tabu} to \textwidth {@{} p{\hintscolumnwidth} @{\hspace{\separatorcolumnwidth}} p{\maincolumnwidth-\cityWidth-1em}@{\hspace{1em}} p{\cityWidth} }{%
         \raggedleft\hintstyle{#1} &{\mdseries{#2}}%
         \if\relax\detokenize{#3}\relax\else{\textit{ -- #3}}\fi
         &\raggedleft{#4}%

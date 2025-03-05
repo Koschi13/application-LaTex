@@ -1,10 +1,10 @@
-% 'outputDir', 'contentDir' and `attachmentsDir' are required to be provided to pdflatex on build
+% 'outputDir', 'contentDir', `attachmentsDir' and `languageFile' are required to be provided to pdflatex on build
 % This can be achieved for example like this:
 % ```shell
-% pdflatex "\def\contentDir{./example/content} \def\attachmentsDir{./example/attachments} \def\outputDir{./build} \input{meta.tex}" 
+% pdflatex "\def\contentDir{./example/content} \def\attachmentsDir{./example/attachments} \def\outputDir{./build} \def\languageFile{./language/german.tex} \input{meta.tex}" 
 % ```
+% TODO: Add check for aforementioned files
 \newcommand* \letterContent         {\contentDir/letter.tex}
 \newcommand* \applicantInfo         {\contentDir/applicantInfo.tex}
 \newcommand* \cvContent             {\contentDir/cv.tex}
 \newcommand* \attachmentsContent    {\contentDir/attachments.tex}
-\newcommand* \languageFile          {../language/german.tex}

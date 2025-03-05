@@ -29,12 +29,15 @@
               infwarerr
               koma-script
               lastpage
+              latexindent  # for formatting
+              latexmk # for the LaTeX Workshop VS-Code pulugin
               layouts
               lipsum
               marvosym
               microtype
               moderncv
               multirow
+              multicolrule
               opensans
               pdflscape
               pdfpages
@@ -48,8 +51,6 @@
               varwidth
               xcolor
               xkeyval
-              latexmk # for the LaTeX Workshop VS-Code pulugin
-              latexindent  # for formatting
               ;
           });
       in {

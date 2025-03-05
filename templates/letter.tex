@@ -1,4 +1,7 @@
-\documentclass[DINmtext,draft=false,ngerman]{scrlttr2}  % DIN or DINmtext
+\input{meta.tex}
+\input{\languageFile}
+
+\documentclass[DINmtext,draft=false,\languageBabel]{scrlttr2}  % DIN or DINmtext
 
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
@@ -10,9 +13,7 @@
 %\usepackage{picture,eso-pic}\AddToShipoutPicture*{\AtPageUpperLeft{\multiput(0,-28mm)(.01\paperwidth,0){100}{\line(1,0){.005\paperwidth}}}}
 %\usepackage{picture,eso-pic}\AddToShipoutPicture*{\AtPageUpperLeft{\multiput(0,-42mm)(.01\paperwidth,0){100}{\line(1,0){.005\paperwidth}}}}
 
-\input{meta.tex}
 \input{\applicantInfo}
-\input{\languageFile}
 % Toggle to show DIN5008 guidelines in rendered PDF
 %\input{../DIN5008/din5008frame.tex}
 

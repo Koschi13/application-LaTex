@@ -30,6 +30,7 @@
 \newcommand* \mySigCity {\myCity}
 \newcommand* \myWebsite {}
 \newcommand* \myGithub {}
+\newcommand* \myLinkedIn {}
 
 %% ------------- Priv Data Helpers -------------
 \def \myName #1{\renewcommand* \myName {#1}}
@@ -45,6 +46,7 @@
 \def \myPicture[#1][#2]#3 {\renewcommand* \myPicture {#3} \renewcommand* \myPictureHeight {#1} \renewcommand* \myPictureBorder {#2}}
 \def \myWebsite[#1]#2 {\renewcommand* \myWebsite {\href{#2}{#1}}}
 \def \myGithub[#1]#2 {\renewcommand* \myGithub {\href{#2}{#1}}}
+\def \myLinkedIn[#1]#2 {\renewcommand* \myLinkedIn {\href{#2}{#1}}}
 
 % ============ Config ============
 \AtEndPreamble{
@@ -59,12 +61,12 @@
         %pdfmenubar=true,                                               % show Acrobat menu?
         pdffitwindow=true,                                              % window fit to page when opened
         pdfstartview={FitH},                                            % fits the FitV/FitH of the page to the window
-        pdftitle={Bewerbung - \myFullName},                             % title
+        pdftitle={\languageApplication - \myFullName},                             % title
         pdfauthor={\myFullName},                                        % author
-        pdfsubject={Bewerbung},                                         % subject of the document
+        pdfsubject={\languageApplication},                                         % subject of the document
         pdfcreator={\myFullName},                                       % creator of the document
         pdfproducer={\myFullName},                                      % producer of the document
-        pdfkeywords={Bewerbung} {\degreeTitle} {\myName} {\mySurname},  % list of keywords
+        pdfkeywords={\languageApplication} {\degreeTitle} {\myName} {\mySurname},  % list of keywords
         pdfnewwindow=true,                                              % links in new window
         colorlinks=false,                                               % false: boxed links; true: colored links
         linkcolor=blue,                                                 % color of internal links (change box color with linkbordercolor)
@@ -139,7 +141,8 @@
         %\if\relax\myPhoneNumber\relax\else\\\smartphoneSymbol \myPhoneNumber\fi%
         \\\smartphoneSymbol \myPhoneNumber%
 		\\\githubSymbol \myGithub%
-		\\\websiteSymbol \myWebsite%
+		\\\linkedInSymbol \myLinkedIn%
+		%\\\websiteSymbol \myWebsite%
         \\\emailSymbol \myEmail% \if\relax\myEmail\relax\else\fi%
     }%
 }
@@ -152,6 +155,7 @@
 \@ifundefined{websiteSymbol}{\newcommand*{\websiteSymbol}{}}{}
 \@ifundefined{addressSymbol}{\newcommand*{\addressSymbol}{}}{}
 \@ifundefined{githubSymbol}{\newcommand*{\githubSymbol}{}}{}
+\@ifundefined{linkedInSymbol}{\newcommand*{\linkedInSymbol}{}}{}
 
 \renewcommand*{\myMarvosymbol}[1]{{\fontfamily{mvs}\fontencoding{U}\fontseries{m}\fontshape{n}\selectfont\char#1}}
 \newcommand{\oldSymbols}{
@@ -160,6 +164,7 @@
     \renewcommand*{\emailSymbol}{\myMarvosymbol{66}~}
     \renewcommand*{\websiteSymbol}{{\Large\myMarvosymbol{205}}~}
     \renewcommand*{\githubSymbol}{{\Large\myMarvosymbol{205}}~}
+    \renewcommand*{\linkedInSymbol}{{\Large\myMarvosymbol{205}}~}
 }
 
 
@@ -171,6 +176,7 @@
 \renewcommand*{\websiteSymbol}{{\Large\myMarvosymbol{205}}~}
 \renewcommand*{\addressSymbol}{\includegraphics[height=0.9\baselineskip,margin*=0pt -0.15ex 0pt 0pt]{\pdfPicPath/simple-home}~}
 \renewcommand*{\githubSymbol}{\includegraphics[height=0.9\baselineskip,margin*=0pt -0.15ex 0pt 0pt]{\pdfPicPath/GitHub-Mark}~}
+\renewcommand*{\linkedInSymbol}{\includegraphics[height=0.9\baselineskip,margin*=0pt -0.15ex 0pt 0pt]{\pdfPicPath/linkedin-svgrepo-com}~}
 % <<-- symbols
 
 

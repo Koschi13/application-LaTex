@@ -6,7 +6,7 @@
 %\toggletrue{noPhoto} % No photo
 %\toggletrue{lebenslaufTitelZentriert}
 %\chead{\anschriftKopfZeile} % experimentell
-%\renewcommand \eintragL [5]{\eintragLZwei{#1}{#2}{#3}{#4}{#5}} %2 statt 3 spalten Eintraege
+%\renewcommand \entryLarge [5]{\entryLargeOne{#1}{#2}{#3}{#4}{#5}} %2 statt 3 spalten Eintraege
 %\onehalfspacing\setlength\datumsVKorrektur{-1.2\baselineskip}
 
 %\oddpagelayoutfalse
@@ -33,7 +33,7 @@
 %\onehalfspacing\setlength\datumsVKorrektur{-1.2\baselineskip}
 
 \section{Hochschulstudium}
-\eintragL{\zeit[03.2002-03.2008]}{Fachhochschule }{Dipl.}{Stadt}{%
+\entryLarge{\zeit[03.2002-03.2008]}{Fachhochschule }{Dipl.}{Stadt}{%
     \begin{itemize}%
         \item Studiengang:
         \item Abschluss: ...
@@ -48,10 +48,10 @@
 }
 
 
-\eintragL{\zeit[08.2005-12.2005]}{University}{}{Stadt}{\lipsum[6]}
+\entryLarge{\zeit[08.2005-12.2005]}{University}{}{Stadt}{\lipsum[6]}
 
 
-\eintragL{\zeit[10.2008-09.2010]}{Fachhochschule}{M.Sc.}{Stadt}{%
+\entryLarge{\zeit[10.2008-09.2010]}{Fachhochschule}{M.Sc.}{Stadt}{%
     \begin{itemize}%
         \item Studiengang: ...
         \item Vertiefung: ...
@@ -66,13 +66,13 @@
 }
 
 \section{Schulbildung}
-\eintragL{\zeit[09.1992-01.2000]}{Willi-Gymnasium}{Abitur}{Stadt}{\lipsum[66]}
-\eintragLZwei{\zeit[02.2000-03.2001]}{Willi-Gymnasium}{Abitur}{Stadt}{%
-    \lipsum[66]} %oder \renewcommand \eintragL [5]... zu Beginn einkommentieren
+\entryLarge{\zeit[09.1992-01.2000]}{Willi-Gymnasium}{Abitur}{Stadt}{\lipsum[66]}
+\entryLargeOne{\zeit[02.2000-03.2001]}{Willi-Gymnasium}{Abitur}{Stadt}{%
+    \lipsum[66]} %oder \renewcommand \entryLarge [5]... zu Beginn einkommentieren
 
 \section{Berufliche Tätigkeiten}
 %\begin{comment}
-\eintragL{\zeit[08.2004-02.2005]}{Technologies}{}{Stadt}{%
+\entryLarge{\zeit[08.2004-02.2005]}{Technologies}{}{Stadt}{%
     \begin{itemize}
         \item Erstes Praxissemester
         \item ...
@@ -80,7 +80,7 @@
     \end{itemize}
 }
 
-\eintragL{\seit[04.2006]{{\small seit} \hphantom{--}}}{Fundação}{}{Stadt}{%
+\entryLarge{\seit[04.2006]{{\small seit} \hphantom{--}}}{Fundação}{}{Stadt}{%
     \begin{itemize}
         \item Zweites Praxissemester
         \item ...
@@ -89,7 +89,7 @@
 }
 
 
-\eintragL{\von[04.2006]bis{\small heute}}{Firma}{Architect}{Stadt}{%
+\entryLarge{\von[04.2006]bis{\small heute}}{Firma}{Architect}{Stadt}{%
 \begin{itemize}
     \item Projektarbeit und Consulting
     \item ...
@@ -98,20 +98,20 @@
 }
 
 
-\eintragL{\zeit[01.2009-01.2009]}{Firma}{Architect}{Stadt}{%
+\entryLarge{\zeit[01.2009-01.2009]}{Firma}{Architect}{Stadt}{%
     \strut Freiberuflich beratend für ...
 }
 
 
 \section{Weitere Tätigkeiten}
-\eintragL{\zeit[09.2002-05.2003]}{Haus der Jugend}{Zivildienst}{Stadt}{}
-\eintragL{\zeit[09.2003-02.2004]}{...}{}{...}{\strut Gewähltes Mitglied des ...}
+\entryLarge{\zeit[09.2002-05.2003]}{Haus der Jugend}{Zivildienst}{Stadt}{}
+\entryLarge{\zeit[09.2003-02.2004]}{...}{}{...}{\strut Gewähltes Mitglied des ...}
 
 \newcommand \tabBreite {45.1mm}
 \newcommand \tabSpace {3mm}
 
 \section{IT--Kenntnisse}
-\eintragK{}{\begin{tabu} to \maincolumnwidth {p{\tabBreite}@{\hspace{\tabSpace}}X{l}}
+\eintragK{}{\begin{tabu} to \maincolumnwidth {p{\tabBreite}@{\hspace{\tabSpace}}X[l]<{\strut}}
         {\mdseries Betriebssysteme}: & Windows, Linux     \\
         {\mdseries Office}:          & PowerPoint, \LaTeX \\
         {\mdseries ...}:             & ...                \\
@@ -121,7 +121,7 @@
 }
 
 \section{Fremdsprachen}
-\eintragK{}{\begin{tabu} to \maincolumnwidth {p{\tabBreite}@{\hspace{\tabSpace}}X{l}}
+\eintragK{}{\begin{tabu} to \maincolumnwidth {p{\tabBreite}@{\hspace{\tabSpace}}X[l]<{\strut}}
         {\mdseries Englisch}: & verhandlungssicher \\
         {\mdseries ...}:      & ...                \\
         {\mdseries ...}:      & ...

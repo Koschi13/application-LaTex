@@ -1,0 +1,37 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build max (german)",
+            "type": "shell",
+            "command": "./scripts/build.py --content-dir ./content/max/german --attachments-dir ./content/max/attachments",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "build max (english)",
+            "type": "shell",
+            "command": "./scripts/build.py --content-dir ./content/max/english --attachments-dir ./content/max/attachments --language-file ./language/english.tex",
+            "group": "build",
+            "presentation": {
+                "reveal": "always"
+            }
+        },
+        {
+            "label": "build example",
+            "type": "shell",
+            "command": "./scripts/build.py --content-dir ./example/content --attachments-dir ./example/attachments",
+            "group": "build",
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
