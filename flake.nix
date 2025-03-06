@@ -56,11 +56,17 @@
       in {
         devShell = pkgs.mkShell {
           nativeBuildInputs = with pkgs; [
-            #texliveFull
+            # LaTex
             tex
             texstudio
+
+            # Python
+            (pkgs.python3.withPackages(ps: with ps; [pillow requests typer]))
             uv
+            cairosvg
           ];
+
+          LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath [ pkgs.cairosvg ]}:$LD_LIBRARY_PATH";
         };
       }
     );
